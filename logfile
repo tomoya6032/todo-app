@@ -1,0 +1,9 @@
+2022-07-14 07:01:45.447 JST [23073] FATAL:  lock file "postmaster.pid" already exists
+2022-07-14 07:01:45.447 JST [23073] HINT:  Is another postmaster (PID 14342) running in data directory "/usr/local/var/postgres"?
+2022-07-14 16:29:20.999 JST [5367] LOG:  starting PostgreSQL 14.4 on x86_64-apple-darwin21.5.0, compiled by Apple clang version 13.1.6 (clang-1316.0.21.2.5), 64-bit
+2022-07-14 16:29:21.001 JST [5367] LOG:  listening on IPv6 address "::1", port 5432
+2022-07-14 16:29:21.001 JST [5367] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-07-14 16:29:21.001 JST [5367] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-07-14 16:29:21.009 JST [5368] LOG:  database system was shut down at 2022-07-14 07:12:14 JST
+2022-07-14 16:29:21.019 JST [5367] LOG:  database system is ready to accept connections
+2022-07-14 16:29:35.533 JST [5380] FATAL:  database "todo_app_development" does not exist
