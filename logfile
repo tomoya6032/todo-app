@@ -7,3 +7,7 @@
 2022-07-14 16:29:21.009 JST [5368] LOG:  database system was shut down at 2022-07-14 07:12:14 JST
 2022-07-14 16:29:21.019 JST [5367] LOG:  database system is ready to accept connections
 2022-07-14 16:29:35.533 JST [5380] FATAL:  database "todo_app_development" does not exist
+2022-07-15 07:19:00.675 JST [5367] LOG:  received smart shutdown request
+2022-07-15 07:19:00.683 JST [5367] LOG:  background worker "logical replication launcher" (PID 5374) exited with exit code 1
+2022-07-15 07:19:00.684 JST [5369] LOG:  shutting down
+2022-07-15 07:19:00.716 JST [5367] LOG:  database system is shut down
