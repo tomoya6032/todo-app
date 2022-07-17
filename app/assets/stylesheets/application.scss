@@ -1,5 +1,5 @@
 
-
+@import './variables';
 @import 'common';
 @import "bulma";
 
@@ -22,29 +22,51 @@ html {
   
 body {
   height: 100%;
-  background-color: #F2F2F2;
+  background-color: $base-bg-color;
   font-size: 1em;
   color: #000000;
 }
   
+h2 {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 36px;
+}
+
 a {
   text-decoration: none;
   color: #da4545;
 }
   
 .field {
-  padding: 16px 16px;
+  padding: 18px 18px;
   width: 100%;
-  
+
   input {
     width: 100%;
+    border: 1px solid #E1E1E1;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    border-style: inset;
   }
 
 }
 
-.input {
-  width: 100%;
+.actions input {
+    color: #FFFFFF;
+    font-size: 18px;
+    margin: 20px 20px;
+    padding: 16px 16px;
+    width: 90%;
+    background: #F8BD1C;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    
 }
+
   
 .float_btn {
   position: fixed;
@@ -62,3 +84,4 @@ a {
       margin-top: 22px;
   }
 }
+
