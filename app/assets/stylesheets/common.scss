@@ -1,5 +1,25 @@
 @import './variables';
 
+.top-title {
+   padding: 20px 20px;
+   margin: 0px 0px;
+   background-color: #F2F2F2;
+   border-bottom-style: solid;
+   border-width: 1px;
+
+   &.border-bottom-style {
+     opacity: 10%;
+   }
+}
+
+.header h2 {
+  padding: 20px 20px;
+}
+
+.header a {
+  padding: 20px 20px;
+}
+
 .dropbtn {
     border: none;
   }
