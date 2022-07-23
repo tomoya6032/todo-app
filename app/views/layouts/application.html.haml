@@ -10,14 +10,22 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
   %body
-    - if flash[:notice]
-      .notification.is-info
-        %p.notice= notice
-    - if flash[:alert]
-      .notification.is-danger
-        %p.alert= alert
-  %header.header
-    .top-title
-      %p= "boards!"
-    
+    -# - if flash[:notice]
+    -#   .notification.is-info
+    -#     %p.notice= notice
+    -# - if flash[:alert]
+    -#   .notification.is-danger
+    -#     %p.alert= alert
+    %header.header
+      .top-title
+        - if !current_page?(root_path)
+          = link_to :back do
+            = image_tag 'back.svg', class: 'header_back'
+        %p.top-PageTitle
+          = link_to 'boards', root_path
+      
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
     = yield
