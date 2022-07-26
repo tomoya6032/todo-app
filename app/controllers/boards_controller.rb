@@ -7,11 +7,11 @@ class BoardsController < ApplicationController
     end
 
     def show
-      @comments = @article.comments
+      @comments = @board.comments
     end
 
     def new
-      @article = current_user.articles.build
+      @board = current_user.boards.build
     end
 
 end
