@@ -1,11 +1,12 @@
 @import './variables';
 
-.top-title {
-   padding: 20px 20px;
+.top-PageTitle {
+   padding: 15px 10px;
    margin: 0px 0px;
    background-color: #F2F2F2;
    border-bottom-style: solid;
    border-width: 1px;
+   font-size: 20px;
 
    &.border-bottom-style {
      opacity: 10%;
