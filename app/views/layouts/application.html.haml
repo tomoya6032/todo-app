@@ -17,11 +17,11 @@
     -#   .notification.is-danger
     -#     %p.alert= alert
     %header.header
-      .top-title
-    -#     - if !current_page?(root_path)
-    -#       = link_to :back do
-        %p.top-PageTitle
-          = link_to 'boards', root_path
+      -# .top-title
+      -#   - if !current_page?(root_path)
+      -#     = link_to :back do
+      %p.top-PageTitle
+        = link_to 'boards', root_path
       
     - if flash.present?
       .flash

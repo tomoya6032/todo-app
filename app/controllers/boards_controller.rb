@@ -3,13 +3,11 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
    
     def index
-      
-      @boards = Board.all
-      
+      @boards = Board.all 
     end
 
     def show
-      @comments = @board.comments
+      @boards = Board.find(params[:id])
     end
 
     def new
@@ -17,7 +15,7 @@ class BoardsController < ApplicationController
     end
 
     def create
-      binding.pry
+     
       @board = current_user.boards.build(board_params)
       # if @board.save
       #   redirect_to board_path(@board), notice: '保存ができたよ'
