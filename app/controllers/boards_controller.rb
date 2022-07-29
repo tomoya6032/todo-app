@@ -11,7 +11,7 @@ class BoardsController < ApplicationController
     end
 
     def new
-      @board = current_user.boards.build
+      @boards = Board.new
     end
 
     def create
