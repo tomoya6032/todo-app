@@ -7,7 +7,7 @@ class Board < ApplicationRecord
   validates :description, length: { minimum: 2 }
   validates :description, uniqueness: true
 
-  validate :validate_title_and_description_length
+  
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
