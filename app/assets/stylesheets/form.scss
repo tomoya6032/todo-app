@@ -1,3 +1,6 @@
+.container {
+  height: 800px;
+}
 
 input, select {
     &.text {
@@ -20,3 +23,4 @@ input, select {
     resize: vertical;
     border: 1px solid #EBEBEB;
   }
+
