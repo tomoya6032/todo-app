@@ -1,5 +1,8 @@
 .container
   %h2 New Board
+  
+
+.container
   %ul
     - board.errors.full_messages.each do |message|
       %li= message
@@ -10,7 +13,9 @@
     %div
       = f.text_field :title, class: 'text'
     %div
+
       = f.label :description, 'Description'
+
     %div
       = f.text_area :description
     = f.submit 'submit', class: 'btn-primary'
