@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_07_26_113213) do
   enable_extension "plpgsql"
 
   create_table "boards", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "title", null: false
     t.text "description", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -30,9 +30,6 @@ ActiveRecord::Schema.define(version: 2022_07_26_113213) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "username"
-    t.text "profile"
-    t.string "profile_image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

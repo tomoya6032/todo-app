@@ -2,6 +2,10 @@
 @import './variables';
 @import 'common';
 @import "bulma";
+@import 'card';
+@import 'board';
+@import 'buttons';
+@import 'form';
 
 html {
     word-spacing: 1px;
@@ -75,7 +79,7 @@ a {
   height: 64px;
   border-radius: 100%;
   text-align: center;
-  background-color: #F2F2F2;
+  background-color: red;
   color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   
