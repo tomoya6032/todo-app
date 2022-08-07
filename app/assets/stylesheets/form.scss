@@ -1,6 +1,10 @@
+.container {
+  height: 80%;
+}
 
 input, select {
     &.text {
+      height: 100%;
       width: 100%;
       margin: 8px 0px;
       padding: 16px 24px;
