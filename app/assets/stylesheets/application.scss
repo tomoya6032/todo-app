@@ -2,7 +2,6 @@
 @import 'tabs';
 @import './variables';
 @import 'common';
-@import "bulma";
 @import 'card';
 @import 'board';
 @import 'buttons';
@@ -43,7 +42,7 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #da4545;
+  color: #000000;
 }
   
 .field {
