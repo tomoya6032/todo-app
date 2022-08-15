@@ -7,7 +7,8 @@ class BoardsController < ApplicationController
    end
 
    def show
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
+    @comments = @board.comments
    end
 
    def new
@@ -18,15 +19,19 @@ class BoardsController < ApplicationController
    def create
      @board = current_user.boards.build(board_params)
      if @board.save
-       redirect_to boards_path(@board), notice: '保存ができたよ'
+       redirect_to board_path(@board), notice: '保存ができたよ'
      else
        flash.now[:error] = '保存に失敗しました'
        render :new
      end
    end
 
+   def edit
+    @article = current_user.articles.find(params[:id])
+   end
+
    private
-   def board_params
+   def boards_params
      params.require(:board).permit(:title, :description)
    end
 

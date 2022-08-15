@@ -1,51 +1,51 @@
 .board
+  - if @board.eyecatch.attached?
+    .board_image
+      = image_tag @board.eyecatch
   %h1.board_title= @board.title
   .board_detail
-    = image_tag 'default-avatar.png'
+    = image_tag @board.user.avatar_image
     %div
-      %p cohki0305
-      %p 2020/4/16
+      %p= @board.author_name
+      %p= @board.display_created_at
+    - if user_signed_in? && current_user.has_written?(@board)
+      .board_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to '編集する', edit_board_path(@board)
+            = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .board_content
-    = @board.description
-  .board_heart
-    = image_tag 'heart.svg'
-
--# .board
--#   - if @board.eyecatch.attached?
--#     .article_image
--#       = image_tag @board.eyecatch
--#   %h1.board_title= @board.title
--#   .board_detail
--#     = image_tag @board.user.avatar_image
--#     %div
--#       %p= @board.author_name
--#       %p= @board.display_created_at
--#     - if user_signed_in? && current_user.has_written?(@board)
--#       .board_detail_actions
--#         .dropdown
--#           = image_tag 'actions.svg', class: 'dropbtn'
--#           .dropdown-content.mini
--#             = link_to '編集する', edit_board_path(@article)
--#             = link_to '削除する', board_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
--#   .board_description
--#     = @board.description
--#   - if user_signed_in?
--#     - if current_user.has_liked?(@board)
--#       .board_heart
--#         = link_to board_like_path(@board), data: { method: 'delete' } do
--#           = image_tag 'heart-active.svg'
--#     - else
--#       .board_heart
--#         = link_to board_like_path(@board), data: { method: 'post' } do
--#           = image_tag 'heart.svg'
+    = @board.content
+  - if user_signed_in?
+    - if current_user.has_liked?(@board)
+      .board_heart
+        = link_to board_like_path(@board), data: { method: 'delete' } do
+          = image_tag 'heart-active.svg'
+    - else
+      .board_heart
+        = link_to board_like_path(@board), data: { method: 'post' } do
+          = image_tag 'heart.svg'
 
 .board 
   %h2 コメント一覧
--#   - @comments.each do |comment|
--#     .board_comment
--#       %p= comment.content
+  - @comments.each do |comment|
+    .board_comment
+      %p= comment.content
 
 .board-container
   = link_to new_board_comment_path(@board) do
     .btn-secondary
       コメントを追加
+
+-# .board
+-#   %h1.board_title= @board.title
+-#   .board_detail
+-#     = image_tag 'default-avatar.png'
+-#     %div
+-#       %p cohki0305
+-#       %p 2020/4/16
+-#   .board_content
+-#     = @board.description
+-#   .board_heart
+-#     = image_tag 'heart.svg'
