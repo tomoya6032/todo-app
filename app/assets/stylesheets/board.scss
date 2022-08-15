@@ -76,15 +76,16 @@ $container-padding: 16px;
   }
 }
 
-.container {
+.board-container {
     color: #FFFFFF;
     font-size: 24px;
     font-weight: bold;
     color: #000;
-    // margin: 20px 20px;
-    // padding: 16px 16px;
+    margin: 20px 20px;
+    padding: 16px 16px;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
