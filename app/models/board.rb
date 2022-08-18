@@ -12,7 +12,7 @@ class Board < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   
-  belongs_to :user , optional: true
+  belongs_to :user, optional: true
   # belongs_to :genre, optional: true
   
   def display_created_at
