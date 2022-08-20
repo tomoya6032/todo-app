@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
    end
 
    def create
-     board = Board.find(params[:article_id])
+     board = Board.find(params[:board_id])
      @comment = board.comments.build(comment_params)
      if @comment.save
-       redirect_to board_path(article), notice: 'コメントを追加' 
+       redirect_to board_path(board), notice: 'コメントを追加' 
      else
        flash.now[:error] = '更新できませんでした'
        render :new
