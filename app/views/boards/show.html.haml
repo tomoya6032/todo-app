@@ -17,17 +17,17 @@
           .dropdown-content.mini
             = link_to '編集する', edit_board_path(@board)
             = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-  .board_content
-    = @board.description
-  - if user_signed_in?
-    - if current_user.acts_like?(@board)
-      .board_heart
-        = link_to board_like_path(@board), data: { method: 'delete' } do
-          = image_tag 'heart-active.svg'
-    - else
-      .board_heart
-        = link_to board_like_path(@board), data: { method: 'post' } do
-          = image_tag 'heart.svg'
+  -# .board_content
+  -#   = @board.description
+  -# - if user_signed_in?
+  -#   - if current_user.acts_like?(@board)
+  -#     .board_heart
+  -#       = link_to board_like_path(@board), data: { method: 'delete' } do
+  -#         = image_tag 'heart-active.svg'
+  -#   - else
+  -#     .board_heart
+  -#       = link_to board_like_path(@board), data: { method: 'post' } do
+  -#         = image_tag 'heart.svg'
 
 .board 
   %h2 コメント一覧
