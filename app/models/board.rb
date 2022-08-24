@@ -8,7 +8,6 @@ class Board < ApplicationRecord
   validates :description, uniqueness: true
 
   
-
   has_many :comments, dependent: :destroy
   has_many :tasks, dependent: :destroy
   

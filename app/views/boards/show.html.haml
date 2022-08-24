@@ -20,6 +20,7 @@
   -# .board_content
   -#   = @board.description
   -# - if user_signed_in?
+
   -#   - if current_user.acts_task?(@board)
   -#     .board_task
   -#       = link_to board_tasks_path(@board), data: { method: 'delete' } do
@@ -29,6 +30,7 @@
   -#       = link_to board_tasks_path(@board), data: { method: 'post' } do
 .board_new        
   %p + Add new Card 
+
 
 .board 
   %h2 コメント一覧
