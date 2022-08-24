@@ -8,9 +8,8 @@ class Board < ApplicationRecord
   validates :description, uniqueness: true
 
   
-
   has_many :comments, dependent: :destroy
-  # has_many :likes, dependent: :destroy
+  has_many :tasks, dependent: :destroy
   
   belongs_to :user, optional: true
   # belongs_to :genre, optional: true
