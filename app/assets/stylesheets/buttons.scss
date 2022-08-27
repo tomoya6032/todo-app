@@ -1,9 +1,9 @@
 @import './variables';
 
 .btn-primary {
-    background-color: gray;
+    background-color: rgb(255, 196, 0);
     border: none;
-    width: 90%;
+    width: 100%;
     text-align: center;
     color: $primary-color;
     padding: 16px 0;
@@ -12,7 +12,7 @@
 
 
 .btn-secondary {
-    background-color: blue;
+    background-color: rgb(255, 196, 0);
     margin: 0 auto;
     border: solid 1px $primary-color;
     width: 90%;
