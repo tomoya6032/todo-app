@@ -27,8 +27,9 @@
     -#   .board_task
     -#     = link_to board_tasks_path(@board), data: { method: 'post' } do
 .board_new        
-  %p + Add new Card 
-
+  = link_to new_board_task_path(@board) do
+    .task_new
+      %p + Add new Card 
 
 .board 
   %h2 コメント一覧
