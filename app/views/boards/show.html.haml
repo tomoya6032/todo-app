@@ -29,9 +29,9 @@
 
 .board 
   %h2 Card一覧
-  - @tasks.each do |task|
-    .board_task
-      %p= task.content
+  -# - @tasks.each do |task|
+  -#   .board_task
+  -#     %p= task.content
 
   - @tasks.each do |task|
     = render 'commons/task', task: task
