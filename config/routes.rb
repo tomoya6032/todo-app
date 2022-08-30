@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   resources :boards do
     resources :comments, only: [:new, :create]
     resources :tasks, only: [:new, :create, :destroy]
-
   end
 
+  resources :tasks, only:[:show, :new, :create, :destroy, :edit, :update]
   resource :profile, only: [:show, :edit, :update]
-  resources :favorites, onle: [:index]
+  resources :favorites, only: [:index]
 end
 
