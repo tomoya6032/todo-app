@@ -7,10 +7,7 @@ class TasksController < ApplicationController
   # end
 
   def show
-    
-    @board = Board.find(params[:task_id])
     @task = Task.find(params[:id])
-    @comments = @task.comments
   end
 
   def new
@@ -33,5 +30,9 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :content)
   end
+
+  # def set_task
+  #   @task = Task.find(params[:id])
+  # end
 
 end
