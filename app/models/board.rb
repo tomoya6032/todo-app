@@ -13,6 +13,7 @@ class Board < ApplicationRecord
   
   belongs_to :user, optional: true
   # belongs_to :genre, optional: true
+
   
   def display_created_at
     I18n.l(self.created_at, format: :default)
