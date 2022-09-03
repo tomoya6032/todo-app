@@ -11,8 +11,8 @@ class User < ApplicationRecord
     boards.exists?(id: board.id)
   end
 
-  def has_task?(board)
-    tasks.exists?(board_id: board.id)
-  end
+  # def has_task?(board)
+  #   tasks.exists?(board_id: board.id)
+  # end
 
 end
