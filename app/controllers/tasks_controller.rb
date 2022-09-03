@@ -7,7 +7,9 @@ class TasksController < ApplicationController
   # end
 
   def show
-    
+    # @board = Board.find(params[:board_id])
+    # @task = @board.tasks.find(params[:id])
+    # @comments = @task.comments
   end
 
   def new
@@ -20,7 +22,7 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params)
     if @task.save
-      redirect_to board_tasks_path(board), notice: 'タスクを追加' 
+      redirect_to board_path(board), notice: 'タスクを追加' 
     else
      flash.now[:error] = '更新できませんでした'
      render :new
