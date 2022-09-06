@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
  
    def index
     @boards = Board.all 
+    # @board = current_user.boards.find(params[:id])
    end
 
    def show
@@ -29,7 +30,7 @@ class BoardsController < ApplicationController
    end
 
    def edit
-    @board = current_user.boards.find(params[:id])
+     @board = current_user.boards.find(params[:id])
    end
 
    def update
