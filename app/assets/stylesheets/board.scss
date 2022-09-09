@@ -76,16 +76,26 @@ $container-padding: 16px;
   }
 }
 
-.board-container {
+.boards {
+  position: relative;
+  padding-bottom: 5px;
+  
+}
+
+.board_new {
     color: #FFFFFF;
     font-size: 24px;
     font-weight: bold;
     color: #000;
+    cursor: pointer;
     margin: 20px 20px;
-    padding: 16px 16px;
+    padding: $container-padding $container-padding;
     width: 90%;
+    height: 140px;
+    border-style: dotted;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    position: absolute;
+    bottom: 0;
 }

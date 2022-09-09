@@ -2,6 +2,7 @@
 
 $heart-size: 16px;
 $avatar-size: 32px;
+$container-padding: 16px;
 
 .card {
   background-color: white;
@@ -67,25 +68,27 @@ $avatar-size: 32px;
   }
 }
 
-.container {
-  position: relative;
-  padding-bottom: 10px;
+// .container {
+//   position: relative;
+//   padding-bottom: 10px;
 
 
 
-}
+// }
 
-.board_new {
+.card_new {
   background-color: transparent;
-  margin: 16px 8px;
+  font-size: 24px;
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  height: 140px;
+  margin: 20px 20px;
+  padding: $container-padding $container-padding;
   width: 90%;
+  height: 140px;
   border-style: dotted;
-  font-size: 22px;
-  padding: 12px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
 }

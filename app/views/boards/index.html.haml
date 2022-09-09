@@ -1,10 +1,13 @@
-.container
-  -# = render 'tabs'
-  %h2 All Boards 
-  - @boards.each do |board|
-    = render 'commons/board', board: board
+.boards
+  .container
+    -# = render 'tabs'
+    %h2 All Boards 
+    - @boards.each do |board|
+      = render 'commons/board', board: board
+
 
   .new_board_container
     = link_to new_board_path do
       .board_new
         %p + Add new board
+
