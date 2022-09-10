@@ -7,14 +7,12 @@ class Board < ApplicationRecord
   validates :description, length: { minimum: 2 }
   validates :description, uniqueness: true
 
-  
   has_many :comments, dependent: :destroy
   has_many :tasks, dependent: :destroy
-  
+
   belongs_to :user, optional: true
   # belongs_to :genre, optional: true
 
-  
   def display_created_at
     I18n.l(self.created_at, format: :default)
   end
