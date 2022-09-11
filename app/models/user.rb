@@ -15,6 +15,7 @@ class User < ApplicationRecord
   #   tasks.exists?(board_id: board.id)
   # end
 
+
   def avatar_image
     if profile&.avatar&.attached?
       profile.avatar
@@ -22,5 +23,6 @@ class User < ApplicationRecord
       'default-avatar.png'
     end
   end
+
 
 end
