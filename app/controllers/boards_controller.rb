@@ -1,22 +1,23 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:show]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
- 
+
    def index
-    @boards = Board.all 
+
+    @boards = Board.all
+    # @board = current_user.boards.find(params[:id])
    end
 
    def show
-    
+
     @tasks = @board.tasks
     @comments = @board.comments
-    
+
    end
 
    def new
      @board = current_user.boards.build
    end
-
 
    def create
      @board = current_user.boards.build(board_params)
@@ -29,7 +30,7 @@ class BoardsController < ApplicationController
    end
 
    def edit
-    @board = current_user.boards.find(params[:id])
+     @board = current_user.boards.find(params[:id])
    end
 
    def update
@@ -50,7 +51,7 @@ class BoardsController < ApplicationController
 
    private
    def board_params
-     params.require(:board).permit(:title, :description)
+     params.require(:board).permit(:title, :description, :eyecatch)
    end
 
    def set_board
