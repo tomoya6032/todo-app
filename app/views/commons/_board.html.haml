@@ -9,8 +9,8 @@
 
     -# = image_tag board.user.avatar_image 
       %div
-        %p= @board.author_name
-        %p= @board.display_created_at
+        %p= board.author_name
+        %p= board.display_created_at
         -# .card_detail
         -#   - if user_signed_in? && current_user.has_written?(@board)
         -# .card_detail_actions

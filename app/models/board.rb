@@ -14,12 +14,17 @@ class Board < ApplicationRecord
   belongs_to :user, optional: true
   # belongs_to :genre, optional: true
 
+
   def display_created_at
     I18n.l(self.created_at, format: :default)
   end
 
+  def display_done_at
+    I18n.l(self.done_at, format: :default)
+  end
+
   def author_name
-    user.display
+    user.display_name
   end
 
 end
