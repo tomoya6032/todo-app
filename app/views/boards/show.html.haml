@@ -3,11 +3,13 @@
     .board_image
       = image_tag @board.eyecatch
   %h1.board_title= @board.title
+
   .board_detail
     -# = image_tag @board.user.avatar_image
     %div
       %p= @board.author_name
       %p= @board.display_created_at
+      %p= @board.display_done_at
     - if user_signed_in? && current_user.has_written?(@board)
       .board_detail_actions
         .dropdown
@@ -17,7 +19,8 @@
             = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .board_content
     = @board.description
-  - if user_signed_in?
+    
+  -# - if user_signed_in?
 
     -# - if current_user.acts_task?(@board)
     -#   .board_task

@@ -15,6 +15,9 @@ class User < ApplicationRecord
   #   tasks.exists?(board_id: board.id)
   # end
 
+  def display_name
+    self.email.split('@').first
+  end
 
   def avatar_image
     if profile&.avatar&.attached?

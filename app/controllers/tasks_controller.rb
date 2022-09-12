@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show]
   before_action :authenticate_user!, only: [:new, :show, :create, :destroy]
-<
+
   # def index
   #   @tasks = Task.all
   # end
