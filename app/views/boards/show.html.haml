@@ -9,7 +9,8 @@
     %div
       %p= @board.author_name
       %p= @board.display_created_at
-      %p= @board.display_done_at
+      
+      
     - if user_signed_in? && current_user.has_written?(@board)
       .board_detail_actions
         .dropdown

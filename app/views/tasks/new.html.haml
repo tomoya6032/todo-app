@@ -4,7 +4,7 @@
       %li= message 
   
   %h2 New Card
-  = form_with(model: @task, url: board_tasks_path(@task.board), local:true) do |f|
+  = form_with(model: @task, url: board_tasks_path, local:true) do |f|
     %div
       = f.label :title, 'Name'
     %div 
@@ -13,5 +13,9 @@
       = f.label :content, 'Description'
     %div 
       = f.text_area :content
+    %div
+      = f.label :deadline, "期限"
+    %div  
+      = f.datetime_select :deadline
 
     = f.submit '保存', class: 'btn-primary'

@@ -2,15 +2,15 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show]
   before_action :authenticate_user!, only: [:new, :show, :create, :destroy]
 
-  # def index
-  #   @tasks = Task.all
-  # end
+  def index
+    @tasks = Task.all
+  end
 
   def show
 
-    # @board = Board.find(params[:board_id])
-    # @task = @board.tasks.find(params[:id])
-    # @comments = @task.comments
+    @board = Board.find(params[:board_id])
+    @task = @board.tasks.find(params[:id])
+    @comments = @task.comments
 
   end
 
