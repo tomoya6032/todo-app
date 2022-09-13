@@ -19,9 +19,7 @@ class Board < ApplicationRecord
     I18n.l(self.created_at, format: :default)
   end
 
-  def display_done_at
-    I18n.l(self.done_at, format: :default)
-  end
+
 
   def author_name
     user.display_name
