@@ -4,14 +4,15 @@ class BoardsController < ApplicationController
 
    def index
 
-    @boards = Board.all
-    # @board = current_user.boards.find(params[:id])
+     @boards = Board.all
+    
+    #  @board = current_user.boards.find(params[:id])
    end
 
    def show
-
-    @tasks = @board.tasks
-    @comments = @board.comments
+     @board = Board.find(params[:id])
+     @tasks = @board.tasks
+     @comments = @board.comments
 
    end
 

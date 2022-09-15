@@ -20,7 +20,6 @@ class Board < ApplicationRecord
   end
 
 
-
   def author_name
     user.display_name
   end

@@ -7,7 +7,8 @@
   .board_detail
     -# = image_tag @board.user.avatar_image
     %div
-      %p= @board.author_name
+      - if @board.user.present?
+        %p= @board.author_name
       %p= @board.display_created_at
       
       
@@ -33,12 +34,9 @@
 
 .board 
   %h2 Card一覧
-  -# - @tasks.each do |task|
-  -#   .board_task
-  -#     %p= task.content
-
   - @tasks.each do |task|
-    = render 'commons/task', task: task
+    .board_task
+      %p= task.content
 
 
 .card_new        
