@@ -1,16 +1,16 @@
-= link_to board_tasks_path(task), method: :post
-  .card
+= link_to board_task_path(@board.id, @task.id)  method: :post
+  .task  
     -# - if board.eyecatch.attached? 
     -#   .card_image
     -#     = image_tag board.eyecatch
-    .card_content
-      .card_title
-        = task.title
-      -# .card_heart
-      -#   = image_tag 'heart.svg'
-      -#   %span= board.like_count 
-    -#   .card_detail
-    -#     = image_tag board.user.avatar_image 
-        %div
-          %p= task.author_title
-          %p= task.display_created_at
+    .task_content
+    .task_title
+      = task.title
+    -# .card_heart
+    -#   = image_tag 'heart.svg'
+    -#   %span= board.like_count 
+-#   .card_detail
+-#     = image_tag board.user.avatar_image 
+      %div
+        %p= task.author_title
+        %p= task.display_created_at
