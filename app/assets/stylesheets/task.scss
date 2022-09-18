@@ -1,11 +1,13 @@
 @import 'variables';
+
 $heart-size: 32px;
 $avatar-size: 32px;
 $container-padding: 16px;
 
 
-.task { 
-  background-color: white;
+.task_content { 
+  background-color: blue;
+  height: 100px;
   margin: 16px 16px;
   padding: $container-padding $container-padding;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);

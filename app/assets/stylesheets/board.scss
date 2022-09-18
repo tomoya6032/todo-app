@@ -78,7 +78,7 @@ $container-padding: 16px;
 
 .boards {
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   
 }
 
@@ -97,5 +97,5 @@ $container-padding: 16px;
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: -140px;
+    // bottom: 10px;
 }
