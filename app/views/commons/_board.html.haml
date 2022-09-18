@@ -1,8 +1,8 @@
 = link_to board_path(board) do
   .card
-    -# - if @board.eyecatch.attached? 
-    -#   .card_image
-    -#     = image_tag board.eyecatch
+    - if board.eyecatch.attached? 
+      .card_image
+        = image_tag board.eyecatch
     .card_content
       .card_title
         = board.title
