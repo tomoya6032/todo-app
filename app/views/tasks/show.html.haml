@@ -1,15 +1,15 @@
 .task
-  -# - if @board.eyecatch.attached?
-  -#   .board_image
-  -#     = image_tag @board.eyecatch
-  %h2.task_title= @task.title
+  - if @task.eyecatch.attached?
+    .task_image
+      = image_tag @task.eyecatch
+  %h1.task_title= @task.title
 
   .task_detail
     -# = image_tag @board.user.avatar_image
     %div
-      - if @task.user.present?
-        %p= @task.author_name
-      %p= @task.display_created_at
+      -# - if @task.user.present?
+        %p= task.author_name
+        %p= task.display_created_at
     
     - if user_signed_in? && current_user.has_written?(@task)
       .task_detail_actions
