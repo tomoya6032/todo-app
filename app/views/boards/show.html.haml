@@ -1,26 +1,24 @@
 .board
-    -# - if @board.eyecatch.attached?
-    -#   .board_image
-    -#     = image_tag @board.eyecatch
-    %h1.board_title= @board.title
-
-    .board_detail
+  - if @board.eyecatch.attached?
+    .board_image
+      = image_tag @board.eyecatch
+  %h1.board_title= @board.title
+  .board_detail
     -# = image_tag @board.user.avatar_image
     %div
-    - if @board.user.present?
-        %p= @board.author_name
-    %p= @board.display_created_at
-        
-        
+      %p= @board.author_name
+      %p= @board.display_created_at
+                
     - if user_signed_in? && current_user.has_written?(@board)
-        .board_detail_actions
+      .board_detail_actions
         .dropdown
-            = image_tag 'actions.svg', class: 'dropbtn'
-            .dropdown-content.mini
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
             = link_to '編集する', edit_board_path(@board)
             = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-.board_content
+  .board_content
     = @board.description
+
   
 -# - if user_signed_in?
 
@@ -33,24 +31,25 @@
 -#     = link_to board_tasks_path(@board), data: { method: 'post' } do
 
 .card 
-%h2 Card一覧
-- @tasks.each do |task|
-= render 'commons/task', task: task 
+  %h2 Card一覧
+  - @tasks.each do |task|
     .board_task
-    %p= task.content
-
+      %p= task.content
+ 
 .card_new        
-= link_to new_board_task_path(@board) do
+  = link_to new_board_task_path(@board) do
     .task_new
-    %p + Add new Card 
+      %p + Add new Card 
 
-.comment 
-%h2 コメント一覧
-- @comments.each do |comment|
+ 
+.comment
+  %h2 コメント一覧
+  - @comments.each do |comment|
     .board_comment
-    %p= comment.content
+      %p= comment.content
 
+ 
 .container
-= link_to new_board_comment_path(@board) do
+  = link_to new_board_comment_path(@board) do
     .btn-secondary
-    コメントを追加
+      コメントを追加
