@@ -8,6 +8,7 @@
     %div
       %p= @board.author_name
       %p= @board.display_created_at
+                
     - if user_signed_in? && current_user.has_written?(@board)
       .board_detail_actions
         .dropdown
@@ -17,37 +18,37 @@
             = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .board_content
     = @board.description
-  - if user_signed_in?
 
-    -# - if current_user.acts_task?(@board)
-    -#   .board_task
-    -#     = link_to board_tasks_path(@board), data: { method: 'delete' } do
-          
-    -# - else
-    -#   .board_task
-    -#     = link_to board_tasks_path(@board), data: { method: 'post' } do
+  
+-# - if user_signed_in?
 
-.board 
+-# - if current_user.acts_task?(@board)
+-#   .board_task
+-#     = link_to board_tasks_path(@board), data: { method: 'delete' } do
+      
+-# - else
+-#   .board_task
+-#     = link_to board_tasks_path(@board), data: { method: 'post' } do
+
+.card 
   %h2 Card一覧
-  -# - @tasks.each do |task|
-  -#   .board_task
-  -#     %p= task.content
-
   - @tasks.each do |task|
-    = render 'commons/task', task: task
+    = render 'commons/task', task: task 
 
-
+ 
 .card_new        
   = link_to new_board_task_path(@board) do
     .task_new
       %p + Add new Card 
 
-.board 
+ 
+.comment
   %h2 コメント一覧
   - @comments.each do |comment|
     .board_comment
       %p= comment.content
 
+ 
 .container
   = link_to new_board_comment_path(@board) do
     .btn-secondary
