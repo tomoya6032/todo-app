@@ -7,7 +7,6 @@ $back-icon-size: 16px;
 
 
 .header {
-  
   display: flex;
   justify-content: space-between;
   background-color: $primary-color;
@@ -17,14 +16,17 @@ $back-icon-size: 16px;
   a {
     color: black;
 
+
   }
 
   &_loginBtn {
     background-color: $base-bg-color;
     height: $avatar-size;
     border-radius: 8px;
-    font-size: 12px;
-    padding: 12px 16px;
+    font-size: 16px;
+    text-align:center;
+    line-height:0px;
+    padding: 14px 16px;
     color: $primary-color;
   }
 
@@ -32,6 +34,8 @@ $back-icon-size: 16px;
   &_logos {
     min-width: 0;
     display: flex;
+    width: 100%;
+    padding-right: 10px;
     justify-content: space-between;
 
 
@@ -57,3 +61,16 @@ $back-icon-size: 16px;
   }
 }
 
+.dropdown a {
+  //  color: red;
+   text-align:center;
+   line-height:0px;
+   padding: 12px 16px;
+   background-color: $base-bg-color;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align:center;
+    line-height:10px;
+    padding: 12px 16px;
+    color: $primary-color;
+}
