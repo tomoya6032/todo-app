@@ -10,7 +10,7 @@ $container-padding: 16px;
   position: relative;
 
   &_image {
-    height: 60px;
+    height: 180px;
     position: relative;
     overflow: hidden;
     margin: $container-padding * -1 $container-padding *-1 16px;
@@ -77,13 +77,11 @@ $container-padding: 16px;
 }
 
 
-.task_card {
-    height: 150px;
-}
+// .task_card {
+//     height: 150px;
+// }
 
-.task_content {
 
-}
 
 .board-container {
   color: #FFFFFF;
