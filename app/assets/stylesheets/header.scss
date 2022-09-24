@@ -10,7 +10,7 @@ $back-icon-size: 16px;
   display: flex;
   justify-content: space-between;
   background-color: $primary-color;
-  padding: $header-padding-y 15px;
+  padding: $header-padding-y 8px;
   font-weight: bold;
 
   a {
@@ -23,10 +23,10 @@ $back-icon-size: 16px;
     background-color: $base-bg-color;
     height: $avatar-size;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 12px;
     text-align:center;
     line-height:0px;
-    padding: 14px 16px;
+    padding: 10px 14px;
     color: $primary-color;
   }
 
@@ -67,10 +67,10 @@ $back-icon-size: 16px;
    line-height:0px;
    padding: 12px 16px;
    background-color: $base-bg-color;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 14px;
     text-align:center;
-    line-height:10px;
-    padding: 12px 16px;
+    line-height:8px;
+    padding: 10px 14px;
     color: $primary-color;
 }

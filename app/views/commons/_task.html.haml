@@ -8,13 +8,10 @@
         = task.title
       .task_content
         = task.content
-        -# = task.datetime_at
-    -# .card_heart
-    -#   = image_tag 'heart.svg'
-    -#   %span= board.like_count 
--#   .card_detail
--#     = image_tag board.user.avatar_image 
-      %div
-        %p= task.author_name
-        %p= task.display_created_at
+        
+      .card_detail
+        = image_tag @board.user.avatar_image 
+        %div
+          %p= task.author_name
+          %p= task.display_created_at
         
