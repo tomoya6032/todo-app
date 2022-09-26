@@ -15,8 +15,9 @@ class TasksController < ApplicationController
   def new
     board = current_user.boards.find(params[:board_id])
     @task = board.tasks.build
-
+    
   end
+
 
   def create
     board = current_user.boards.find(params[:board_id])
