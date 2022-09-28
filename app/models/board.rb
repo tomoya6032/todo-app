@@ -19,6 +19,10 @@ class Board < ApplicationRecord
     I18n.l(self.created_at, format: :default)
   end
 
+  # def has_written?(board)
+  #   boards.exists?(id: board.id)
+  # end
+
 
   def author_name
     user.display_name

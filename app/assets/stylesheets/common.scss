@@ -31,12 +31,13 @@
   }
   
   .dropdown-content {
-    font-weight: normal;
+    font-weight: bold;
     display: none;
     right: 0;
     position: absolute;
     background-color: white;
     min-width: 160px;
+    height: 50px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 
@@ -49,11 +50,11 @@
     padding: 8px 16px;
     text-decoration: none;
     display: block;
-    color: $text-base-color;
+    color: black;
   }
   
   .dropdown-content a:hover {
-    background-color: white;
+    background-color: $base-bg-color;
   }
   
   .dropdown:hover .dropdown-content {

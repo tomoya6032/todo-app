@@ -7,16 +7,17 @@ class TasksController < ApplicationController
   end
 
   def show
-    # board = Board.find(params[:board_id])
-    # @task =  board.task.find(params[:id])
+    # @board = Board.find(params[:board_id])
+    # @task = @board.task.find(params[:id]) 
 
   end
 
   def new
     board = current_user.boards.find(params[:board_id])
     @task = board.tasks.build
-
+    
   end
+
 
   def create
     board = current_user.boards.find(params[:board_id])
@@ -32,11 +33,11 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @board = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def update
-    @board = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
       redirect_to task_path(@board),notice: '更新できました'
     else
