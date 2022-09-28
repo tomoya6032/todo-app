@@ -57,6 +57,7 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :content, :deadline_at, :eyecatch)
   end
 
+  
   def set_task
     @task = Task.find(params[:board_id])
   end
