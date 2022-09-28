@@ -15,7 +15,7 @@ class Task < ApplicationRecord
   # end
 
   # def has_written?(task)
-  #   tasuks.exists?(board_id: task.id)
+  #   tasks.exists?(board_id: task.id)
   # end
 
   def author_name

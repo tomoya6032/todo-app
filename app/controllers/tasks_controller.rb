@@ -33,13 +33,13 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:board_id])
   end
 
   def update
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:board_id])
     if @task.update(task_params)
-      redirect_to task_path(@board),notice: '更新できました'
+      redirect_to board_task_path(@task),notice: '更新できました'
     else
       flash.now[:error] = '更新できませんでした'
       render :edit
@@ -54,7 +54,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :deadline_at, :eyecatch)
+    params.require(:task).permit(:title, :content, :eyecatch)
   end
 
   
