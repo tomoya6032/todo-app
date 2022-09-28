@@ -7,8 +7,7 @@
     = image_tag @board.user.avatar_image
     %div
       %p= @board.author_name
-      %p= @board.display_created_at
-                
+      %p= @board.display_created_at               
     - if user_signed_in? && current_user.has_written?(@board)
       .board_detail_actions
         .dropdown
