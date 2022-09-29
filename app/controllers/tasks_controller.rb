@@ -47,7 +47,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task = current_user.tasks.find(params[:id])
+    task = current_user.tasks.find(params[:board_id])
     task.destroy!
     redirect_to root_path, notice: '削除に成功しました'
   end
