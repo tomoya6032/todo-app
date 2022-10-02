@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
    def new
      board = Board.find(params[:board_id])
-     @comment = board.comments.build
+     task = Task.find(params[:task_id])
+     @comment = task.comments.build
    end
 
    def create
-     board = Board.find(params[:board_id])
-     @comment = board.comments.build(comment_params)
+     task = Task.find(params[:task_id])
+     @comment = current_user.comments.build(comment_params)
      if @comment.save
-       redirect_to board_path(board), notice: 'コメントを追加'
+       redirect_to task_path(board), notice: 'コメントを追加'
      else
        flash.now[:error] = '更新できませんでした'
        render :new
