@@ -18,12 +18,14 @@
             = link_to '削除する', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .task_content
     = @task.content
-  -# - if user_signed_in?
+  
+.comment
+  %h2 コメント一覧
+  - @comments.each do |comment|
+    = render 'commons/comment', comment: comment 
 
-    -# - if current_user.acts_task?(@board)
-    -#   .board_task
-    -#     = link_to board_tasks_path(@board), data: { method: 'delete' } do
-          
-    -# - else
-    -#   .board_task
-    -#     = link_to board_tasks_path(@board), data: { method: 'post' } do
+ 
+.container
+  = link_to new_board_task_comment_path(@task) do
+    .btn-secondary
+      コメントを追加
