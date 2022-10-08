@@ -2,8 +2,10 @@
   %ul 
     - @comment.errors.full_messages.each do |message|
       %li= message 
+
   %h2 New comment!
   = form_with(model: @comment, url: task_comments_path(@comment.task), local:true) do |f|
+
     %div
       = f.label :content, '内容'
     %div 
