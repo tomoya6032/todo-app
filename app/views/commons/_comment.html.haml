@@ -1,10 +1,10 @@
-= link_to board_task_comments_path(comment) do
+= link_to board_task_comment_path(comment) do
   .card
     - if comment.eyecatch.attached? 
       .card_image
         = image_tag task.eyecatch
     .comment_content
-        = comment.content
+      = comment.content
         
       .card_detail
         = image_tag @comment.user.avatar_image 
