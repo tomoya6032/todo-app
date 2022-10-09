@@ -2,6 +2,10 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:new, :create]
   before_action :authenticate_user!, only: [:new, :show, :create, :edit, :destroy]
  
+
+   def show
+
+   end
   
    def new
      board = Board.find(params[:board_id])
@@ -30,7 +34,7 @@ class CommentsController < ApplicationController
 
   #  def set_comment
   #    @comment = Comment.find(params[:task_id])
-    # @task = Task.find(params[:id])
+  #   @task = Task.find(params[:id])
   #  end
 
 end

@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show]
+  before_action :set_task, only: [:show, :edit, :update]
   before_action :authenticate_user!, only: [:new, :show, :create, :edit, :destroy]
 
   def index
@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    # @board = Board.find(params[:board_id])
+    @board = Board.find(params[:id])
     # @task = Task.find(params[:id]) 
     # @comments = Comment.new
     # @comments = @task.comments
@@ -63,8 +63,8 @@ class TasksController < ApplicationController
 
   
   def set_task
-    @task = Task.find(params[:board_id])
-    # @task = Task.find(params[:id])
+    @task = Task.find(params[:id])
+    # @board = Board.find(params[:board_id])
   end
 
 end
