@@ -33,7 +33,6 @@
   %h2 Card一覧
   - @tasks.each do |task|
     = render 'commons/task', task: task 
-
  
 .card_new        
   = link_to new_board_task_path(@board) do
