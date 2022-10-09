@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show]
+  before_action :set_task, only: [:show, :edit, :update]
   before_action :authenticate_user!, only: [:new, :show, :create, :edit, :destroy]
 
   def index
@@ -7,20 +7,24 @@ class TasksController < ApplicationController
   end
 
   def show
-    # @board = Board.find(params[:board_id])
-    # @task = @board.task.find(params[:id]) 
-
+    @board = Board.find(params[:id])
+    # @task = Task.find(params[:id]) 
+    @comments = Comment.new
+    @comments = @task.comments
   end
 
   def new
-    board = current_user.boards.find(params[:board_id])
+    # board = current_user.boards.find(params[:board_id])
+    # @task = board.tasks.build
+    board = Board.find(params[:board_id])
     @task = board.tasks.build
-    
   end
 
 
   def create
-    board = current_user.boards.find(params[:board_id])
+    # board = current_user.boards.find(params[:board_id])
+    # @task = board.tasks.build(task_params.merge!(user_id: current_user.id))
+    board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params.merge!(user_id: current_user.id))
     if @task.save
 
@@ -33,13 +37,13 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:board_id])
   end
 
   def update
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:board_id])
     if @task.update(task_params)
-      redirect_to task_path(@board),notice: '更新できました'
+      redirect_to board_task_path(@task),notice: '更新できました'
     else
       flash.now[:error] = '更新できませんでした'
       render :edit
@@ -47,18 +51,20 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task = current_user.tasks.find(params[:id])
+    task = current_user.tasks.find(params[:board_id])
     task.destroy!
     redirect_to root_path, notice: '削除に成功しました'
   end
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :deadline_at, :eyecatch)
+    params.require(:task).permit(:title, :content, :eyecatch)
   end
 
+  
   def set_task
     @task = Task.find(params[:board_id])
+    
   end
 
 end

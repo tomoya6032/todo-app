@@ -1,0 +1,13 @@
+= link_to board_task_path(comment) do
+  .card
+    - if comment.eyecatch.attached? 
+      .card_image
+        = image_tag task.eyecatch
+    .comment_content
+      = comment.content
+        
+      .card_detail
+        = image_tag @comment.user.avatar_image 
+        %div
+          %p= comment.author_name
+          %p= comment.display_created_at

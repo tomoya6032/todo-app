@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   belongs_to :board
   belongs_to :user
   validates :title, :content, presence: true
-
+  has_many :comments, dependent: :destroy
 
   def display_created_at
     I18n.l(self.created_at, format: :default)
@@ -15,7 +15,7 @@ class Task < ApplicationRecord
   # end
 
   # def has_written?(task)
-  #   tasuks.exists?(board_id: task.id)
+  #   tasks.exists?(board_id: task.id)
   # end
 
   def author_name

@@ -1,3 +1,4 @@
+%h2 card詳細ページ
 .task
   - if @task.eyecatch.attached?
     .task_image
@@ -9,7 +10,7 @@
       %p= @task.author_name
       %p= @task.display_created_at
     
-    - if user_signed_in? && current_user.has_written?(@task)
+    - if user_signed_in? && current_user.has_written2?(@task)
       .task_detail_actions
         .dropdown
           = image_tag 'actions.svg', class: 'dropbtn'
@@ -18,12 +19,17 @@
             = link_to '削除する', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
   .task_content
     = @task.content
-  -# - if user_signed_in?
+  
+.comment
+  %h2 コメント一覧
+  - @comments.each do |comment|
+    = render 'commons/comment', comment: comment 
+    .task_comment
+      %p= comment.content
+ 
+.container
 
-    -# - if current_user.acts_task?(@board)
-    -#   .board_task
-    -#     = link_to board_tasks_path(@board), data: { method: 'delete' } do
-          
-    -# - else
-    -#   .board_task
-    -#     = link_to board_tasks_path(@board), data: { method: 'post' } do
+  = link_to new_board_comment_path(@task) do
+
+    .btn-secondary
+      コメントを追加
