@@ -1,3 +1,4 @@
+%h2 card詳細ページ
 .task
   - if @task.eyecatch.attached?
     .task_image
@@ -22,10 +23,13 @@
 .comment
   %h2 コメント一覧
   - @comments.each do |comment|
-    = render 'commons/comment', comment: @comment 
-
+    = render 'commons/comment', comment: comment 
+    .task_comment
+      %p= comment.content
  
 .container
-  = link_to new_board_task_comment_path(@task) do
+
+  = link_to new_board_comment_path(@task) do
+
     .btn-secondary
       コメントを追加
