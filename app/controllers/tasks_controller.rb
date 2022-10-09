@@ -9,8 +9,8 @@ class TasksController < ApplicationController
   def show
     @board = Board.find(params[:id])
     # @task = Task.find(params[:id]) 
-    # @comments = Comment.new
-    # @comments = @task.comments
+    @comments = Comment.new
+    @comments = @task.comments
   end
 
   def new
@@ -63,8 +63,8 @@ class TasksController < ApplicationController
 
   
   def set_task
-    @task = Task.find(params[:id])
-    # @board = Board.find(params[:board_id])
+    @task = Task.find(params[:board_id])
+    
   end
 
 end
