@@ -66,5 +66,5 @@ class TasksController < ApplicationController
   #   @task = Task.find(params[:id])
   #   # @board = Board.find(params[:board_id])
   # end
-
+  
 end
