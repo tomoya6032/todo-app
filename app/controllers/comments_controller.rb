@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   # before_action :set_comment, only: [:new, :create]
   before_action :authenticate_user!, only: [:new, :show, :create, :edit, :destroy]
+ 
 
    def show
     
@@ -8,7 +9,6 @@ class CommentsController < ApplicationController
   
    def new
     #  board = Board.find(params[:board_id])
-
      task = Task.find(params[:task_id])
      @comment = current_user.comments.build
      @comment = task.comments.build
@@ -23,17 +23,16 @@ class CommentsController < ApplicationController
     #  @comment = current_user.comments.build(comment_params)
      if @comment.save
        redirect_to board_task_path(@task), notice: 'コメントを追加'
-
      else
        flash.now[:error] = '更新できませんでした'
        render :new
      end
    end
 
-  #  private
-  #  def comment_params
-  #    params.require(:comment).permit(:content)
-  #  end
+   private
+   def comment_params
+     params.require(:comment).permit(:content)
+   end
 
   #  def set_comment
   #    @comment = Comment.find(params[:id])
