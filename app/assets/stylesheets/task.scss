@@ -74,6 +74,24 @@ $container-padding: 16px;
   }
 }
 
+.comment_detail img {
+  cursor: pointer;
+  width: $avatar-size;
+  height: $avatar-size;
+  border-radius: 100%;
+  margin-right: 16px;
+}
+
+.comment_detail {
+  display: flex;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.task_comment {
+  padding: 8px 24px;
+}
+
 
 // .task_card {
 //     height: 150px;
@@ -92,5 +110,5 @@ $container-padding: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-    
+  
 }
