@@ -6,14 +6,19 @@
     %div 
       = f.label :eyecatch, 'アイキャッチ'
     %div 
-      = f.file_field :eyecatch 
+      = f.file_field :eyecatch
     %div
       = f.label :title, 'Name'
-    %div
+    %div 
       = f.text_field :title, class: 'text'
     %div
       = f.label :content, 'Description'
-    %div
+    %div 
       = f.text_area :content
+    -# %div 
+    -#   = f.label :deadline_at, class: '期限日'
+    -# %div
+    -#   = f.datetime_select :deadline_at, class: '期限の日'
+    
     
     = f.submit 'submit', class: 'btn-primary'
