@@ -10,6 +10,10 @@ class Task < ApplicationRecord
     I18n.l(self.created_at, format: :default)
   end
 
+  def display_deadline_at
+    I18n.l(self.deadline_at, format: :default)
+  end
+
   # def display_datetime
   #   I18n.l(self.datetime_at, format: :default)
   # end

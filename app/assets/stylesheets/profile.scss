@@ -17,6 +17,7 @@ $image_size: 56px;
       img {
         width: $image_size;
         height: $image_size;
+        border-radius: 100%;
       }
     }
 
@@ -56,4 +57,8 @@ $image_size: 56px;
       font-size: 12px;
     }
   }
+}
+
+.container.profilePage {
+  height: 300px;
 }
