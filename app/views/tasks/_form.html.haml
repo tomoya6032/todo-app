@@ -19,6 +19,9 @@
     -#   = f.label :deadline_at, class: '期限日'
     -# %div
     -#   = f.datetime_select :deadline_at, class: '期限の日'
-    
+    %div
+      = f.label :limit, '期限の設定'
+    %div  
+      = datetime_select :date, Date.today, use_month_numbers: true
     
     = f.submit 'submit', class: 'btn-primary'
