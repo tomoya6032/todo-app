@@ -17,10 +17,13 @@
       = f.label :content, 'Description'
     %div 
       = f.text_area :content
-    %div 
-      = f.label :deadline, class: 'deadline'
+    -# %div 
+    -#   = f.label :deadline, class: 'deadline'
+    -# %div
+    -#   = f.datetime_select :deadline, class: 'deadline'
     %div
-      = f.datetime_select :deadline, class: 'deadline'
-    
+      = f.label :limit, '期限の設定'
+    %div  
+      = datetime_select :date, Date.today, use_month_numbers: true
 
     = f.submit '保存', class: 'btn-primary'
