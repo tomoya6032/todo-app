@@ -38,10 +38,12 @@ class TasksController < ApplicationController
   end
 
   def edit
+    # @board = Board.find(params[:id])
     @task = current_user.tasks.find(params[:board_id])
   end
 
   def update
+    # @board = current_user.boards.find(params[:id])
     @task = current_user.tasks.find(params[:board_id])
     if @task.update(task_params)
       # redirect_to board_task_path(@task),notice: '更新できました'
