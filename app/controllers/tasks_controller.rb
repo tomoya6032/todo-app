@@ -5,10 +5,13 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
   end
-
+  
   def show
+    
     @board = Board.find(params[:board_id])
-    @task = Task.find(params[:task_id])
+   
+    @task = Task.find(params[:id])
+    
     # @comments = Comment.new
     @comments = @task.comments
   end
@@ -43,7 +46,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    @board = Board.find(params[:board_id])
+    
+    @board = Board.find(params[:id])
     # @board = current_user.boards.find(params[:id])
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
@@ -60,12 +64,18 @@ class TasksController < ApplicationController
     task.destroy!
     redirect_to root_path, notice: '削除に成功しました'
   end
-
+  
   private
+  
   def task_params
+    
+    params.require(:task).permit(:title, :content, :eyecatch, :id, :board_id)
+  end
+  
+  private
+  def update_task_params
     params.require(:task).permit(:title, :content, :eyecatch, :id)
   end
-
   
   # def set_task
   #   @task = Task.find(params[:id])

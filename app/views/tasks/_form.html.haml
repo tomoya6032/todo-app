@@ -1,7 +1,7 @@
 .container
   %ul
-    - task.errors.full_messages.each do |message|
-      %li= message
+    - @task.errors.full_messages.each do |message|
+      %li= message  
   = form_with(model:[@board, @task], url: board_task_path(@task), method: 'put', local: true) do |f|
     %div 
       = f.label :eyecatch, 'アイキャッチ'
@@ -24,4 +24,4 @@
     %div  
       = datetime_select :date, Date.today, use_month_numbers: true
     
-    = f.submit 'submit', class: 'btn-primary'
+    = f.submit 'submit', class: 'btn-primary'   
