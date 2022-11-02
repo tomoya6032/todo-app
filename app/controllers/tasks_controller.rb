@@ -18,6 +18,7 @@ class TasksController < ApplicationController
     # @task = board.tasks.build
     board = Board.find(params[:board_id])
     @task = board.tasks.build
+    session[:previous_url] = request.referer 
   end
 
 
@@ -26,10 +27,10 @@ class TasksController < ApplicationController
     # @task = board.tasks.build(task_params.merge!(user_id: current_user.id))
     board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params.merge!(user_id: current_user.id))
+    redirect_to session[:previous_url] 
+
     if @task.save
-
       redirect_to board_path(board), notice: 'タスクを追加'
-
     else
      flash.now[:error] = 'タスクを追加できませんでした'
      render :new
@@ -37,12 +38,16 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.tasks.find(params[:board_id])
+    # @board = Board.find(params[:board_id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def update
-    @task = current_user.tasks.find(params[:board_id])
+    @board = Board.find(params[:id])
+    # @board = current_user.boards.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
+      # redirect_to board_task_path(@task),notice: '更新できました'
       redirect_to board_task_path(@task),notice: '更新できました'
     else
       flash.now[:error] = '更新できませんでした'

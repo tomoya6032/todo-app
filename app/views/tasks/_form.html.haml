@@ -1,8 +1,8 @@
 .container
   %ul
-    - @task.errors.full_messages.each do |message|
+    - task.errors.full_messages.each do |message|
       %li= message
-  = form_with(model:@task, url: board_task_path(@task), local: true) do |f|
+  = form_with(model:[@board, @task], url: board_task_path(@task), method: 'put', local: true) do |f|
     %div 
       = f.label :eyecatch, 'アイキャッチ'
     %div 
@@ -19,6 +19,9 @@
     -#   = f.label :deadline_at, class: '期限日'
     -# %div
     -#   = f.datetime_select :deadline_at, class: '期限の日'
-    
+    %div
+      = f.label :limit, '期限の設定'
+    %div  
+      = datetime_select :date, Date.today, use_month_numbers: true
     
     = f.submit 'submit', class: 'btn-primary'
