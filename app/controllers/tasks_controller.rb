@@ -9,7 +9,7 @@ class TasksController < ApplicationController
   def show
     
     @board = Board.find(params[:board_id])
-   
+    # @task = Task.find(id: params[:board_id][:task_id])
     @task = Task.find(params[:id])
     
     # @comments = Comment.new
@@ -47,7 +47,7 @@ class TasksController < ApplicationController
 
   def update
     
-    @board = Board.find(params[:id])
+    @board = Board.find(params[:board_id])
     # @board = current_user.boards.find(params[:id])
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
@@ -69,7 +69,7 @@ class TasksController < ApplicationController
   
   def task_params
     
-    params.require(:task).permit(:title, :content, :eyecatch, :id, :board_id)
+    params.require(:task).permit(:title, :content, :eyecatch)
   end
   
   private
