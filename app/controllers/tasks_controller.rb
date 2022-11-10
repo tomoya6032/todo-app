@@ -30,7 +30,7 @@ class TasksController < ApplicationController
     # @task = board.tasks.build(task_params.merge!(user_id: current_user.id))
     board = Board.find(params[:board_id])
     @task = board.tasks.build(task_params.merge!(user_id: current_user.id))
-    redirect_to session[:previous_url] 
+    session[:previous_url] 
 
     if @task.save
       redirect_to board_path(board), notice: 'タスクを追加'
@@ -69,7 +69,7 @@ class TasksController < ApplicationController
   
   def task_params
     
-    params.require(:task).permit(:title, :content, :eyecatch)
+    params.require(:task).permit(:title, :content, :eyecatch, :id,).merge(board_id: params[:board_id])
   end
   
   private
