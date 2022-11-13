@@ -1,17 +1,15 @@
 class TasksController < ApplicationController
   # before_action :set_task, only: [:show, :edit, :update]
-  before_action :authenticate_user!, only: [:new, :show, :create, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :create, :edit, :update, :destroy]
 
   def index
     @tasks = Task.all
   end
   
   def show
-    
     @board = Board.find(params[:board_id])
     # @task = Task.find(id: params[:board_id][:task_id])
     @task = Task.find(params[:id])
-    
     # @comments = Comment.new
     @comments = @task.comments
   end
@@ -49,9 +47,10 @@ class TasksController < ApplicationController
     
     @board = Board.find(params[:board_id])
     # @board = current_user.boards.find(params[:id])
+    # @task = Task.find(params[:id])
     @task = current_user.tasks.find(params[:id])
+    
     if @task.update(task_params)
-      # redirect_to board_task_path(@task),notice: '更新できました'
       redirect_to board_task_path(@task),notice: '更新できました'
     else
       flash.now[:error] = '更新できませんでした'
@@ -65,21 +64,19 @@ class TasksController < ApplicationController
     redirect_to root_path, notice: '削除に成功しました'
   end
   
-  private
-  
+private
   def task_params
-    
-    params.require(:task).permit(:title, :content, :eyecatch, :id,).merge(board_id: params[:board_id])
+     params.require(:task).permit(:title, :content, :eyecatch, :id,).merge(board_id: params[:board_id])
   end
   
-  private
-  def update_task_params
-    params.require(:task).permit(:title, :content, :eyecatch, :id)
-  end
-  
-  # def set_task
-  #   @task = Task.find(params[:id])
-  #   # @board = Board.find(params[:board_id])
+  # private
+  # def update_task_params
+  #   params.require(:task).permit(:title, :content, :eyecatch, :id) #（rimit入れる）
   # end
+  
+  def set_task
+    @task = Task.find(params[:id])
+    # @board = Board.find(params[:board_id])
+  end
   
 end

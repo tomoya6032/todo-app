@@ -2,7 +2,7 @@
   %ul
     - @task.errors.full_messages.each do |message|
       %li= message  
-  = form_with(model: @task, url: board_task_path(@task.board), method: 'PUT', local: true) do |f|
+  = form_with(model: @task, url: board_task_path(@task), local: true) do |f|
     -# = form_with @task, url: {controller: 'tasks', action: 'update' } do |f|
     %div 
       = f.label :eyecatch, 'アイキャッチ'
