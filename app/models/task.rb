@@ -26,5 +26,9 @@ class Task < ApplicationRecord
     user.display_name
   end
 
-  
+  def comment_count
+    comments.count
+  end
+
+
 end
