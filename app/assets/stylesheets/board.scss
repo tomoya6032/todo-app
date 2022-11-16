@@ -3,7 +3,7 @@ $avatar-size: 32px;
 $container-padding: 16px;
 
 .board {
-  background-color: white;
+  background-color: #f5f5f5;
   margin: 16px 16px;
   padding: $container-padding $container-padding;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -78,6 +78,10 @@ $container-padding: 16px;
   position: relative;
   padding-bottom: 100px;
   
+}
+
+.new_board_container {
+  height: 150px;
 }
 
 .board_new {
