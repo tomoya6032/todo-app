@@ -50,6 +50,7 @@ $container-padding: 16px;
       border-radius: 100%;
       margin-right: 8px;
     }
+
   }
 
   &_content {
@@ -71,6 +72,10 @@ $container-padding: 16px;
       width: 100%;
     }
   }
+}
+
+.comment_count {
+  margin: 0 0 0 auto;
 }
 
 // .container {
