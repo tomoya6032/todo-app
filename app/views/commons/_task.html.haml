@@ -14,7 +14,13 @@
         %div
           %p= task.author_name
           %p= task.display_created_at
+        
+
+        -# .card_detail
+        -#   = image_tag @comment.user.avatar_image 
       
         .comment_count
           %p コメント数
           = task.comment_count
+
+        
