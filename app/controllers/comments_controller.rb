@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
    def create
     #  task = current_user.tasks.find(params[:task_id])
      task = Task.find(params[:task_id]) 
-    #  @comment = task.comments.build(comment_params.merge!(user_id: current_user.id))
+     
      @comment = task.comments.build(comment_params.merge!(user_id: current_user.id))
     #  @comment = current_user.comments.build(comment_params)
      if @comment.save
