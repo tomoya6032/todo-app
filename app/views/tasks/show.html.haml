@@ -21,6 +21,8 @@
   .task_content
     = @task.content
   
+    
+
 .comment
   %h2 コメント一覧
   - @comments.each do |comment|
@@ -28,11 +30,9 @@
       .comment_detail
         = image_tag current_user.avatar_image
         %p= comment.content
+
  
 .container
   = link_to new_board_task_comment_path(@board, @task) do
     .btn-secondary
       コメントを追加
-
-.container      
-  = link_to 'リンク', board_path(36)
