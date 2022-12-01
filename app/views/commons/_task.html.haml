@@ -23,11 +23,12 @@
           %p コメント数
           = task.comment_count
 
-        .comment_avatar
-          - @comments.each do |comment|
-            .comment_detail
-              = image_tag comment.user.avatar_image 
-       
+          .comment_detail
+            = image_tag current_user.avatar_image
+        
+          
+          
+          
 
 
      
