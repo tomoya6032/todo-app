@@ -4,13 +4,14 @@ class CommentsController < ApplicationController
  
 
    def show
-    
+     @comment = Comment.find_by(id: params[:id])
+     @user = User.find_by(id: @comment.user_id)
    end
   
    def new
     #  board = Board.find(params[:board_id])
      task = Task.find(params[:task_id])
-     @comment = current_user.comments.build
+    #  @comment = current_user.comments.build
      @comment = task.comments.build
      session[:previous_url] = request.referer
      
