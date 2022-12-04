@@ -19,6 +19,10 @@ class User < ApplicationRecord
     tasks.exists?(id: task.id)
   end
 
+  # def has_written3?(comment)
+  #   comments.exists?(id: comment.id)
+  # end
+
   def display_name
     self.email.split('@').first
   end

@@ -14,16 +14,16 @@
         %div
           %p= task.author_name
           %p= task.display_created_at
-        
 
-        -# .card_detail
-        -#   = image_tag @comment.user.avatar_image 
-      
         .comment_count
           %p コメント数
           = task.comment_count
 
           .comment_detail
+            -# - @comments.each do |comment|
+            -#   .task_comment
+            -#     = image_tag @comments.avatar_image
+           
             = image_tag current_user.avatar_image
             
 

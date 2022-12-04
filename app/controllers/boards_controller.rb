@@ -13,6 +13,7 @@ class BoardsController < ApplicationController
      @board = Board.find(params[:id])
      @tasks = @board.tasks
      @task = Task.new
+
      @comments = @task.comments
 
    end
