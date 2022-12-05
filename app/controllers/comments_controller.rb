@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     #  @comment = current_user.comments.build
      @comment = task.comments.build
      session[:previous_url] = request.referer
-     
+     @comments = current_user.comment.build
    end
 
    def create

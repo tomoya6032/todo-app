@@ -28,7 +28,7 @@
   - @comments.each do |comment|
     .task_comment
       .comment_detail
-        = image_tag current_user.avatar_image
+        = image_tag comment.user.avatar_image
         %p= comment.content
 
  

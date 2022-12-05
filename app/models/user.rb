@@ -24,7 +24,11 @@ class User < ApplicationRecord
   # end
 
   def display_name
-    self.email.split('@').first
+    if profile && profile.nickname
+      profile.nickname
+    else  
+      self.email.split('@').first
+    end
   end
 
   def prepare_profile
@@ -39,6 +43,12 @@ class User < ApplicationRecord
     end
   end
 
-  
+  def comment_image
+    if profile&.avatar&.attached?
+      comments.avatar
+    else
+      'default-avatar.png'
+    end
+  end
 
 end

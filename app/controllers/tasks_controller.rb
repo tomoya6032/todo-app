@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     # @comments = Comment.new
     @comments = @task.comments
     # @comments_count = Comments.where(task_id: @task.id).count
-
+    
   end
 
   def new
