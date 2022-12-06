@@ -8,7 +8,7 @@ class Board < ApplicationRecord
   validates :description, length: { minimum: 2 }
   validates :description, uniqueness: true
 
-  
+  has_many :comments, dependent: :destroy
   has_many :tasks, dependent: :destroy
 
   belongs_to :user, optional: true
@@ -26,6 +26,14 @@ class Board < ApplicationRecord
 
   def author_name
     user.display_name
+  end
+
+  def avatar_image
+    if comment&.avatar&.attached?
+      comment.avatar
+    else
+      'default-avatar.png'
+    end
   end
 
 end
