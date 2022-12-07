@@ -43,12 +43,12 @@ class User < ApplicationRecord
     end
   end
 
-  def comment_image
-    if profile&.avatar&.attached?
-      comments.avatar
-    else
-      'default-avatar.png'
-    end
-  end
+  # def comment_image
+  #   if profile&.avatar&.attached?
+  #     comment.avatar
+  #   else
+  #     'default-avatar.png'
+  #   end
+  # end
 
 end

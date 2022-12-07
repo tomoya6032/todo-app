@@ -30,5 +30,12 @@ class Task < ApplicationRecord
     comments.count
   end
 
+  # def avatar_image
+  #   if profile&.avatar&.attached?
+  #     profile.avatar
+  #   else
+  #     'default-avatar.png'
+  #   end
+  # end
 
 end
