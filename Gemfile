@@ -40,6 +40,7 @@ group :development, :test do
   gem 'hamlit'
   gem 'pry-byebug'
   gem 'rubocop-rails'
+  gem 'annotate'
 end
 
 group :development do

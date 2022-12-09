@@ -29,7 +29,6 @@
   - @comments.each do |comment|
     .task_comment
       .comment_detail
-        -binding.pry
         = image_tag comment.user.avatar_image
         %p= comment.content
 
