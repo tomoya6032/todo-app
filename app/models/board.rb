@@ -44,8 +44,8 @@ class Board < ApplicationRecord
   end
 
   def avatar_image
-    if comment&.avatar&.attached?
-      comment.avatar
+    if profile&.avatar&.attached?
+      profile.avatar
     else
       'default-avatar.png'
     end
