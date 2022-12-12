@@ -22,13 +22,15 @@
           = task.comment_count
 
           .comment_detail
-            - @comments.each do |comment|
-              .task_comment
-              = image_tag = current_user.avatar_image
+            -# - @comments.each do |comment|
+              -# .task_comment
+
+            -# - if @comments.avatar_image?
+            = image_tag comment.avatar_image
   
             -# = image_tag current_comment.avatar_image
-            -# = image_tag user.avatar_image
-            = image_tag comment.user.avatar_image
+            -# = image_tag comment.image.url
+            -# = image_tag @comments.user.avatar_image
   
 
             -# = image_tag current_user.avatar_image
