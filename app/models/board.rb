@@ -51,12 +51,12 @@ class Board < ApplicationRecord
     end
   end
 
-  def comment_avatar_image
-    if profile&.avatar&.attached?
-      profile.avatar
-    else
-      'default-avatar.png'
-    end
-  end
+  # def comment_image
+  #   if profile&.avatar&.attached?
+  #     profile.avatar
+  #   else
+  #     'default-avatar.png'
+  #   end
+  # end
 
 end
