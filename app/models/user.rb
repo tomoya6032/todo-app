@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one :profile, dependent: :destroy
-  has_one :avatar
+  has_one_attached :avatar
   
 
   def has_written?(board)
