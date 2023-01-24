@@ -2,12 +2,11 @@
 #
 # Table name: boards
 #
-#  id          :bigint           not null, primary key
-#  description :text             not null
-#  title       :string           not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :bigint
+#  id         :bigint           not null, primary key
+#  title      :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint
 #
 # Indexes
 #
@@ -15,13 +14,14 @@
 #
 class Board < ApplicationRecord
   has_one_attached :eyecatch
+  has_rich_text :description
   validates :title, presence: true
   validates :title, length: { minimum: 2, maximum: 100  }
   validates :title, format: { with: /\A(?!\@)/ }
 
-  validates :description, presence: true
-  validates :description, length: { minimum: 2 }
-  validates :description, uniqueness: true
+  # validates :description, presence: true
+  # validates :description, length: { minimum: 2 }
+  # validates :description, uniqueness: true
 
   has_many :comments, dependent: :destroy
   has_many :tasks, dependent: :destroy
