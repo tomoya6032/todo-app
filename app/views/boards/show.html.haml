@@ -5,8 +5,8 @@
       = image_tag @board.eyecatch
   %h1.board_title= @board.title
   .board_detail
-    
-    = image_tag @board.user.avatar_image
+    = link_to account_path(@board.user) do
+      = image_tag @board.user.avatar_image
     
     %div
       %p= @board.author_name
