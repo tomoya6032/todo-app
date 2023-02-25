@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-   root to: 'boards#index'
+  root to: 'boards#index'
+  resource :timeline, only: [:show]
 
   resources :boards do
     resources :tasks, only: [:new, :show, :edit, :create, :update, :destroy] do

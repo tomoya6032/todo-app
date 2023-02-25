@@ -12,8 +12,12 @@
     text-align: center;
     cursor: pointer;
 
+    a {
+      display: block;
+    }
+
     &.active {
-      background-color: $primary-color;
+      background-color: #8AC542;
       color: white;
     }
 
