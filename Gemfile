@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rubocop-rails'
   gem 'annotate'
+  gem 'active_decorator'
 end
 
 group :development do
