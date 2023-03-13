@@ -21,6 +21,8 @@ require("@rails/actiontext")
 
 import $ from 'jquery'
 import axios from 'axios'
+import 'trix/dist/trix.css'
+
 
 document.addEventListener('turbolinks:load', () => {
     $('.board_title').on('click', () => {
