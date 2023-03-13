@@ -42,6 +42,8 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'annotate'
   gem 'active_decorator'
+  gem 'trix'
+
 end
 
 group :development do
@@ -52,6 +54,7 @@ group :development do
   gem 'erb2haml'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
 end
 
 group :test do
